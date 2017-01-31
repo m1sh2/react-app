@@ -66,6 +66,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	if (!localStorage.getItem('tasks')) {
+	  localStorage.setItem('tasks', JSON.stringify([{ id: 1, title: 'Task 1', description: '', type: 'bug', open: false }, { id: 2, title: 'Task 2', description: '', type: 'story', open: true }]));
+	}
+
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 
@@ -35782,11 +35786,7 @@
 	  getTasks: function getTasks() {
 	    var _this = this;
 
-	    var tasks = !localStorage.getItem('tasks') ? [{ id: 1, title: 'Task 1', description: '', type: 'bug', open: false }, { id: 2, title: 'Task 2', description: '', type: 'story', open: true }] : JSON.parse(localStorage.getItem('tasks'));
-
-	    if (!localStorage.getItem('tasks')) {
-	      localStorage.setItem('tasks', JSON.stringify(tasks));
-	    }
+	    var tasks = JSON.parse(localStorage.getItem('tasks'));
 
 	    return tasks.map(function (task) {
 	      var url = '/task/' + task.id;

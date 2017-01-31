@@ -54,16 +54,7 @@ export const Tasks = React.createClass({
     this.forceUpdate();
   },
   getTasks: function() {
-    const tasks = !localStorage.getItem('tasks')
-      ? [
-          {id: 1, title: 'Task 1', description: '', type: 'bug', open: false},
-          {id: 2, title: 'Task 2', description: '', type: 'story', open: true}
-        ]
-      : JSON.parse(localStorage.getItem('tasks'));
-    
-    if (!localStorage.getItem('tasks')) {
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
 
     return tasks.map(task => {
       const url = '/task/' + task.id;

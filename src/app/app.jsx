@@ -7,7 +7,12 @@ import { Task } from './task.jsx';
 import { NoMatch } from './no-match.jsx';
 import { Router, Route, hashHistory } from 'react-router';
 
-
+if (!localStorage.getItem('tasks')) {
+  localStorage.setItem('tasks', JSON.stringify([
+    {id: 1, title: 'Task 1', description: '', type: 'bug', open: false},
+    {id: 2, title: 'Task 2', description: '', type: 'story', open: true}
+  ]));
+}
 
 const App = React.createClass({
   render: function() {
