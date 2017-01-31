@@ -1,0 +1,38 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "React application as a result of education",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "light-server -s . -p 8000",
+    "prebuild": "del ./dist/**",
+    "build": "webpack --config ./conf/webpack.build.js --progress --profile --colors",
+    "watch": "webpack --config ./conf/webpack.watch.js --progress --profile --colors"
+  },
+  "author": "Mike Datsko",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "del-cli": "^0.2.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.10.0",
+    "light-server": "^1.1.10",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-merge": "^2.6.1",
+    "webpack-notifier": "^1.5.0"
+  }
+}
