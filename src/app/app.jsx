@@ -5,7 +5,7 @@ import { About } from './about.jsx';
 import { Tasks } from './tasks.jsx';
 import { Task } from './task.jsx';
 import { NoMatch } from './no-match.jsx';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 
 
 
@@ -87,7 +87,7 @@ const App = React.createClass({
 
 render(
   <div>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/" component={App}>
         <Route path="/about" component={About}></Route>
         <Route path="/tasks" component={Tasks}>
