@@ -15,6 +15,10 @@ if (!localStorage.getItem('tasks')) {
 }
 
 const App = React.createClass({
+  componentDidMount: function() {
+    window.parent.postMessage('FRAME_LOADED', (new URL(document.location.href)).searchParams.get('host_url') || 'http://jsmeasure.surge.sh');
+  },
+
   render: function() {
     // console.log(this.props.children);
     let title = 'Home';
